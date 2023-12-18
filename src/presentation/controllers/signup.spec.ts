@@ -23,6 +23,7 @@ describe("SignUp Controller", () => {
       expect(httpResponse.body).toEqual(new MissingParamError(paramName));
     });
   };
+
   testMissingParam("name");
   testMissingParam("email");
   testMissingParam("password");
