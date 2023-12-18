@@ -1,8 +1,11 @@
 import { MissingParamError } from "../errors/missing-param-error";
 import { SignUpController } from "./signup";
 
+const makeSut = (): SignUpController => {
+  return new SignUpController();
+};
 describe("SignUp Controller", () => {
-  const sut = new SignUpController();
+  const sut = makeSut();
 
   const testMissingParam = (paramName: string) => {
     test(`Should return 400 if no ${paramName} is provided`, () => {
